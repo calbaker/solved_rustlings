@@ -7,11 +7,15 @@
 // Execute `rustlings hint errors1` for hints!
 
 pub fn generate_nametag_text(name: String) -> Result<String, String> {
-    if name.len() > 0 {
-        Ok(format!("Hi! My name is {}", name))
-    } else {
-        // Empty names aren't allowed.
-        Err(format!("`name` was empty; it must be nonempty."))
+    // if name.len() > 0 {
+    //     Ok(format!("Hi! My name is {}", name))
+    // } else {
+    //     // Empty names aren't allowed.
+    //     Err(format!("`name` was empty; it must be nonempty."))
+    // }
+    match name {
+        x if x.len() > 0 => Ok(format!("Hi! My name is {}", x)),
+        x => Err(format!("`name` was empty; it must be nonempty."))
     }
 }
 
